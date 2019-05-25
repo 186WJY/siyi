@@ -1,0 +1,48 @@
+import java.util.Random;
+
+/**
+* @描述  测试双色球
+*
+*/
+public class play {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Random rand=new Random();
+		int num1=rand.nextInt(99)+1;
+		int num2=rand.nextInt(99)+1;
+//		System.out.println("双色球号码："+num1+"  "+num2);//显示第一次随机生成的两个整数，判断下边语句是否有用
+		for(int i=1;i<100;i++) {
+			if(num1==num2){
+				num2=rand.nextInt(99)+1;
+			}
+			break;
+		}
+		System.out.println("你的双色球号码："+num1+"  "+num2);//显示真正输出的两个整数
+		
+		int t1=rand.nextInt(99)+1;
+		int t2=rand.nextInt(99)+1;
+		for(int i=1;i<100;i++) {
+			if(t1==t2){
+				t2=rand.nextInt(99)+1;
+			}
+			break;
+		}
+		System.out.println("中奖号码："+t1+"  "+t2);
+		if(num1==t1) {
+			if(num2==t2) {
+				System.out.println("中奖啦");
+			}else {
+				System.out.println("没中奖");
+			}
+		}else if(num1==t2) {
+			if(num2==t1) {
+				System.out.println("中奖啦");
+			}else {
+				System.out.println("没中奖");
+			}
+		}else {
+			System.out.println("没中奖");
+		}
+	}
+}
